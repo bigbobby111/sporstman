@@ -19,7 +19,7 @@ const swiperModules = [Pagination, Autoplay];
 const mobileMenuOpen = ref(false);
 const currentCategory = ref("Все");
 const news = ref();
-const URL = "http://127.0.0.1:8000";
+const URL = "https://sporstman-production.up.railway.app/";
 
 const toggleCategory = (category) => {
   currentCategory.value = category;
