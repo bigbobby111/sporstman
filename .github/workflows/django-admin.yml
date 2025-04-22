@@ -1,0 +1,13 @@
+name: Create Django Superuser
+on: [workflow_dispatch]
+
+jobs:
+  create-superuser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run createsuperuser
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          railway connect --project ${{ secrets.RAILWAY_PROJECT_ID }} &&
+          railway run python manage.py createsuperuser --noinput --username=${{ secrets.ADMIN_USER }} --email=${{ secrets.ADMIN_EMAIL }}
