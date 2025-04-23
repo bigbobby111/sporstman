@@ -143,3 +143,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEBUG = False
 ALLOWED_HOSTS = ['.onrender.com']
+
+# settings.py
+# ... остальные настройки ...
+
+# Автозапуск скрипта при старте приложения
+if os.environ.get("AUTO_CREATE_SUPERUSER") == "true":
+    from .create_admin import *
